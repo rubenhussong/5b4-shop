@@ -1,0 +1,80 @@
+@import '../../../../../styles/global-variables';
+
+.detail-carousel-wrapper {
+    margin: 0;
+
+    .carousel {
+
+        .slick-slide {
+            background: $color-accent;
+            outline: none;
+            z-index: 10;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .slider-arrow {
+        z-index: 100;
+        font-size: $fontsize-s;
+        position: absolute;
+        top: calc(50% - 10px);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: $fontsize-xl;
+            height: $fontsize-xl;
+            border-radius: 50%;
+
+            color: $color-light;
+            border: 2.5px solid $color-light;
+            background: $color-dark;
+
+            transition: .3s ease;
+
+            span {
+                display: inline-block;
+            }
+        }
+        
+        &:hover p,
+        &:active p {
+            color: $color-light;
+            background: $color-accent;
+        }
+
+        &.slider-arrow-prev {
+            left: 2rem - $fontsize-xl / 2;
+            p span {
+                transform: translate3d(0, -.04rem, 0);
+            }
+        }
+
+        &.slider-arrow-next {
+            right: 2rem - $fontsize-xl / 2;
+            p span {
+                transform: translate3d(.07rem, -.05rem, 0);
+            }
+        }
+
+        @include max-width('small') {
+            &.slider-arrow-prev {
+                left: -$fontsize-xl / 2;
+            }
+            &.slider-arrow-next {
+                right: -$fontsize-xl / 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.show-on-scroll {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: .4s ease-out;
+
+    // specific position scroll behaviour (top, bottom)
+
+    &.under-viewport{
+        transform: translateY(4rem) scale(.9);
+    }
+    
+    &.over-viewport{
+        transform: translateY(-4rem) scale(.9);
+    }
+
+    // general scroll behaviour
+
+    &.under-viewport, 
+    &.over-viewport {
+        opacity: .5;
+
+        // custom scroll behaviour
+
+        &.scroll-image {
+            transform: scale(.8);
+        }
+        
+        &.scroll-detail {
+            transform: scale(.5);
+        }
+    }
+}
+
+li.show-on-scroll {
+
+    &.under-viewport {
+        transform: translateX(3rem) translateY(4rem) scale(.9);
+    }
+    
+    &.over-viewport {
+        transform: translateX(-3rem) translateY(-4rem) scale(.9);
+    }
+}
+
+.fullscreen-carousel-wrapper.show-on-scroll {
+
+    .slide {
+        transform: scale(1);
+        transition: .4s ease-out;
+    }
+    
+    &.under-viewport,
+    &.over-viewport {
+        transform: translateY(0) scale(1);
+
+        .slide {
+            transform: scale(.8);
+        }
+    }
+}

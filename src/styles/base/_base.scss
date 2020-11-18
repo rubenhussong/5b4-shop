@@ -1,0 +1,70 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: $color-dark;
+    @include typo-serif(normal, normal);
+    line-height: 1.7;
+
+}
+
+html {
+    @include typo-serif(normal, normal);
+    font-size: $fontsize-m;
+    line-height: 1.7;
+}
+
+h1 {
+    font-size: $fontsize-xl;
+    @include typo-sans();
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    color: $color-dark;
+    @include typo-serif(normal, italic);
+
+    &:after {
+        content: '';
+        background: $color-accent;
+        width: 0;
+        height: .11em;
+        margin-bottom: -.11em;
+        transform: translateY(-0.3em);
+        display: block;
+        position: absolute;
+        z-index: -1;
+        transition: width 0.2s ease, margin-left 0.2s ease;
+    }
+    &:hover:after {
+        width: 100%;
+    }
+}
+
+.symbol {
+    @include typo-symbols;
+    //font-size: 1.5em;
+}
+
+::selection {
+    background: $color-accent;
+    color: $color-light;
+}
+
+.colored-background ::selection {
+    background: $color-dark;
+    color: $color-accent;
+}
+
+.slick-slide {
+    outline: none
+}

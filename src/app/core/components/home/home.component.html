@@ -1,0 +1,70 @@
+<app-clock-banner></app-clock-banner>
+
+<div class="section section-info">
+    <app-bullet-list [listItems]="bulletListItems"></app-bullet-list>
+</div>
+
+<div class="section section-banner show-on-scroll scroll-image">
+    <img alt="5b4 Misty Mountains Banner" src="./assets/img/banner-misty-mountains.jpg">
+</div>
+
+<div class="section section-info">
+    <p class="show-on-scroll">
+        Wir sind 5b4 und machen Produkte mit dem Ziel, Einwegplastik zu reduzieren.
+        Gemeinsam mit Dir möchten wir unsere Erde zu einem gesünderen Planeten machen.
+        Damit Mutter Erde, wenn sie in den Spiegel schaut, so schön ist, wie sie es verdient.
+    </p>
+</div>
+
+<div class="section section-banner show-on-scroll scroll-image">
+    <img alt="5b4 Mountain River Banner" src="./assets/img/banner-mountain-river.jpg">
+</div>
+
+<div class="section section-info">
+    <p class="show-on-scroll">
+        Unsere
+        <a [routerLink]="['/flasche']" routerLinkActive="active">5b4-Trinkflasche</a>
+        ist der perfekte Begleiter auf jedem Weg im Einklang mit der Natur.
+        Die Flasche ist
+
+        <app-tooltip-box [activeText]="'frei von BPA*'">
+            Alle Bestandteile der Flasche, die mit dem Inhalt in Kontakt kommen, sind BPA-frei.
+        </app-tooltip-box>
+
+        , vollständig wiederverwertbar und kommt verpackt in aufbereitetem Karton bei
+        Dir zuhause an.
+        Damit Du auch unterwegs guten Gewissens trinken kannst.
+    </p>
+</div>
+
+<div class="section">
+    <app-full-width-carousel [slides]=carouselSlides></app-full-width-carousel>
+</div>
+
+<div class="section section-info">
+    <p class="show-on-scroll">
+        Vom Erlös jeder Flasche spenden wir 50ct an <a href="https://oneearth-oneocean.com/">One Earth – One
+            Ocean</a>.
+        Mit der <a href="https://oneearth-oneocean.com/die-loesung/">Maritimen Müllabfuhr</a> hat der Verein ein
+        wirksames Konzept zur Sammlung und nachhaltigen Verwertung von Meeresmüll entwickelt.
+        In Küstenbereichen und Mündungsgebieten sammeln spezielle Müllsammelschiffe das Plastik ein. Dieses wird
+        dann sortenrein sortiert und aufbereitet.
+        Neben Kunststoffballen wird auch Energie und Kraftstoff aus dem Plastikmüll gewonnen.
+    </p>
+</div>
+
+<app-donation-banner></app-donation-banner>
+
+<div class="section section-info">
+    <p class="show-on-scroll">
+        Durstig? Dann bestell Dir für 24,99€
+        <a href="https://www.real.de/product/360839467/">Deine 5b4-Trinkflasche</a>.
+        Bist Du an einer Zusammenarbeit interessiert, dann freuen wir uns über <a href="mailto:erde@5b4.shop"
+            subject="Ich bin flüssig und gewähre Euch drei Wünsche!">Deine Flaschenpost</a>.
+        Bald ist auch unser eigener Onlineshop verfügbar.
+        Schau doch in der Zwischenzeit auf unserem <a href="https://instagram.com/fivebefore">Instagram-Kanal</a>
+        vorbei!
+    </p>
+</div>
+
+<app-footer></app-footer>

@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@charset 'utf-8';
+
+@import
+  'styles/global-variables';
+
+@import 
+  'styles/base/base',
+  'styles/base/reset';
+
+@import
+  'styles/layout/content';
+
+@import
+  'styles/components/buttons',
+  'styles/components/list',
+  'styles/components/scroll-animations';

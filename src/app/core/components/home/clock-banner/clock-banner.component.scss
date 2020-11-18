@@ -1,0 +1,16 @@
+#banner-clock {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        position: absolute;
+        width: 70%;
+        max-width: 70%;
+        max-height: 70%;
+        transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
+    }
+}

@@ -1,0 +1,7 @@
+<div class="fullscreen-carousel-wrapper show-on-scroll">
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="config">
+                <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+                        <img src="{{ slide.src }}" alt="{{ slide.alt }}">
+                </div>
+        </ngx-slick-carousel>
+</div>

@@ -1,0 +1,100 @@
+// ================================================== F L U I D   T Y P O G R A P H Y
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size !important;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})) !important;
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size !important;
+      }
+    }
+  }
+}
+
+$min_width: 400px;
+$max_width: 1600px;
+$min_font: 13px;
+$max_font: 20px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  font-size: 10px;
+}
+
+// ================================================== F O N T S
+$path-fonts: '/assets/fonts/';
+$font-domaine: 'domaine-text-web';
+
+@font-face {
+  font-family: 'domaine';
+  font-weight: lighter;
+  font-style: normal;
+  src: url('#{$path-fonts}#{$font-domaine}-light.eot');
+  src: url('#{$path-fonts}#{$font-domaine}-light.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-light.woff2') format('woff2'), url('#{$path-fonts}font/#{$font-domaine}-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'domaine';
+  font-weight: lighter;
+  font-style: italic;
+  src: url('#{$path-fonts}#{$font-domaine}-light-italic.eot');
+  src: url('#{$path-fonts}#{$font-domaine}-light-italic.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-light-italic.woff2') format('woff2'), url('#{$path-fonts}#{$font-domaine}-light-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'domaine';
+    font-weight: normal;
+    font-style: normal;
+    src: url('#{$path-fonts}#{$font-domaine}-regular.eot');
+    src: url('#{$path-fonts}#{$font-domaine}-regular.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-regular.woff2') format('woff2'), url('#{$path-fonts}#{$font-domaine}-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'domaine';
+    font-weight: normal;
+    font-style: italic;
+    src: url('#{$path-fonts}#{$font-domaine}-regular-italic.eot');
+    src: url('#{$path-fonts}#{$font-domaine}-regular-italic.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-regular-italic.woff2') format('woff2'), url('#{$path-fonts}#{$font-domaine}-regular-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'domaine';
+    font-weight: bold;
+    font-style: normal;
+    src: url('#{$path-fonts}#{$font-domaine}-bold.eot');
+    src: url('#{$path-fonts}#{$font-domaine}-bold.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-bold.woff2') format('woff2'), url('#{$path-fonts}#{$font-domaine}-bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'domaine';
+    font-weight: bold;
+    font-style: italic;
+    src: url('#{$path-fonts}#{$font-domaine}-bold-italic.eot');
+    src: url('#{$path-fonts}#{$font-domaine}-bold-italic.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}#{$font-domaine}-bold-italic.woff2') format('woff2'), url('#{$path-fonts}font/#{$font-domaine}-bold-italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'vg5000';
+    src: url('#{$path-fonts}vg5000-regular_web.eot');
+    src: url('#{$path-fonts}vg5000-regular_web.eot?#iefix') format('embedded-opentype'), url('#{$path-fonts}vg5000-regular_web.woff2') format('woff2'), url('#{$path-fonts}font/vg5000-regular_web.woff') format('woff'), url('#{$path-fonts}font/vg5000-regular_web.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'symbols';
+    src: url('#{$path-fonts}vg5000-symbols.otf');
+    font-weight: normal;
+    font-style: normal;
+}

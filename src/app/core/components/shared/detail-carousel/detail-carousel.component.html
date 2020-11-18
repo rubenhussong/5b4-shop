@@ -1,0 +1,18 @@
+<div class="detail-carousel-wrapper">
+    <ngx-slick-carousel class="carousel" 
+                            #slickModal="slick-carousel" 
+                            [config]="carouselConfig">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <app-custom-pinch-zoom [slide]="slide">
+                <img src="{{ slide.src }}" alt="{{ slide.alt }}">
+            </app-custom-pinch-zoom>
+        </div>
+    </ngx-slick-carousel>
+
+    <button class="symbol slider-arrow slider-arrow-prev" (click)="prev()">
+        <p><span>&#8612;</span></p>
+    </button>
+    <button class="symbol slider-arrow slider-arrow-next" (click)="next()">
+        <p><span>&#8614;</span></p>
+    </button>
+</div>

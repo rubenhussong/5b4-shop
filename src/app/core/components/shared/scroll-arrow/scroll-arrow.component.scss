@@ -1,0 +1,51 @@
+@import '../../../../../styles/global-variables';
+
+#wrapper-scroll-arrow {
+    @include typo-symbols;
+    font-size: $fontsize-l;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+    transition: opacity .3s ease, transform .3s ease, pointer-events 0s .3s;
+
+    &.hidden {
+        opacity: 0;
+        transform: translateY(-1rem);
+        pointer-events: none;
+    }
+    #scroll-arrow {
+        text-align: center;
+    
+        p {
+            color: $color-dark;
+            border: 2.5px solid $color-dark;
+            background: white;
+            width: 1.25 * $fontsize-xl;
+            height: 1.25 * $fontsize-xl;
+            border-radius: 50%;
+            transition: .3s ease;
+
+            span {
+                transform: translateY(-.16rem);
+                display: inline-block;
+            }
+        }
+        &:hover p {
+            color: $color-dark;
+            background: $color-accent;
+        }
+        &:active p {
+            color: $color-light;
+            background: $color-accent;
+            border: 3px solid $color-accent;
+        }
+    }
+}

@@ -1,0 +1,6 @@
+
+<pinch-zoom #thisPinch="pinchZoom"
+            [properties]="pinchZoomConfig" 
+            (mouseenter)="zoomIn()" (mouseleave)="zoomOut()">
+            <ng-content></ng-content>
+</pinch-zoom>

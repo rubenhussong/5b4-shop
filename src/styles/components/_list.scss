@@ -1,0 +1,20 @@
+ul {
+  list-style: none; /* Remove default bullets */
+
+  &.detail-list {
+
+    li {
+      font-size: $fontsize-s;
+      width: 50%;
+
+      &::before {
+        content: "→";
+        @include typo-symbols;
+        color: $color-accent;
+
+        display: inline-block;
+        width: 1.2rem;
+      }
+    }
+  }
+}

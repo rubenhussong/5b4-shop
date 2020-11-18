@@ -1,0 +1,52 @@
+header {
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+    
+    // Header fade transition
+    transition: opacity .3s ease,
+    transform .3s ease,
+    pointer-events 0s .3s;
+
+    opacity: 0;
+    transform: translateY(-1rem);
+    pointer-events: none;
+    
+    &.visible {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+    a {
+        position: absolute;
+
+        &:after {
+            visibility: hidden;
+        }
+
+        img, svg {
+            width: 100%;
+            height: auto;
+        }
+
+        &#header-wordmark {
+            left: 0;
+            width: 4rem;
+            margin: 1.25rem;
+        }
+
+        &#header-bottle {
+            right: 0;
+            width: 4rem;
+            margin: .75rem;
+        }
+
+        transition: .4s ease-out;
+
+        &.hidden {
+            opacity: 0;
+            transform: translateY(-4rem);
+            pointer-events: none;
+        }
+    }
+}

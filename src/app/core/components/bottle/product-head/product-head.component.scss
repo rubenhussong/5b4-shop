@@ -1,0 +1,50 @@
+@import '../../../../../styles/global-variables';
+
+.product-title {
+    @include typo-serif(normal, normal);
+    font-size: $fontsize-xl;
+
+    h2 {
+        @include typo-serif(lighter, normal);
+        font-size: $fontsize-xl;
+    }
+
+    &--bp-small { visibility: hidden; }
+    &--bp-large { visibility: visible; }
+
+    @include max-width('small') {
+        &--bp-small {
+            visibility: visible;
+            padding: 8rem 1.5rem 0;
+        }
+        &--bp-large { visibility: hidden; }
+    }
+}
+
+.product-head {
+
+    .product-title {
+        margin-bottom: .25rem;
+        width: 100%;
+    }
+
+    .product-info-wrapper {
+        max-width: 35rem;
+        display: flex;
+        flex-direction: column;
+        font-size: $fontsize-m;
+
+        .product-title {
+            width: 100%;
+        }
+
+        .product-buy {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .product-info {
+            margin-bottom: 1rem;
+        }
+    }
+}
