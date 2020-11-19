@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { NgcCookieConsentService } from 'ngx-cookieconsent';
 import { filter } from 'rxjs/operators';
 import { pageTransitionAnimation } from './core/config/animations';
 
@@ -13,7 +14,12 @@ import { pageTransitionAnimation } from './core/config/animations';
 })
 export class AppComponent {
   title = '5b4 Shop';
-
+  
+  constructor(private ccService: NgcCookieConsentService) {
+    //private router: Router
+    //this.routeToPageTop(this.router)
+  }
+ 
   routeToPageTop(router: Router) {
     router.events
     .pipe(filter(event => event instanceof NavigationEnd))

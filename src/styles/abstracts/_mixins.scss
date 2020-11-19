@@ -3,20 +3,36 @@ $font-family-serif: 'domaine', arial, sans-serif;
 $font-family-sans: 'vg5000', Arial, sans-serif;
 $font-family-symbols: 'symbols', Arial, sans-serif;
 
-@mixin typo-serif($font-weight, $font-style) {
-    font-family: $font-family-serif;
-    font-weight: $font-weight;
-    font-style: $font-style;
-    text-transform: none;
-    letter-spacing: 0;
+@mixin typo-serif($font-weight, $font-style, $important: null) {
+    @if ($important) {
+        font-family: $font-family-serif !important;
+        font-weight: $font-weight !important;
+        font-style: $font-style !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+    } @else {
+        font-family: $font-family-serif;
+        font-weight: $font-weight;
+        font-style: $font-style;
+        text-transform: none;
+        letter-spacing: 0;
+    }
 }
 
-@mixin typo-sans {
-    font-family: $font-family-sans;
-    font-weight: normal;
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+@mixin typo-sans($important: null) {
+    @if ($important) {
+        font-family: $font-family-sans !important;
+        font-weight: normal !important;
+        font-style: normal !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.1em !important;
+    } @else {
+        font-family: $font-family-sans;
+        font-weight: normal;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
 }
 
 @mixin typo-symbols {

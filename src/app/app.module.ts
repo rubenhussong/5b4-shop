@@ -24,6 +24,8 @@ import { ProductDetailsComponent } from './core/components/bottle/product-detail
 import { ProductFeaturesComponent } from './core/components/bottle/product-features/product-features.component';
 import { DetailCarouselComponent } from './core/components/shared/detail-carousel/detail-carousel.component';
 import { CustomPinchZoomComponent } from './core/components/shared/detail-carousel/custom-pinch-zoom/custom-pinch-zoom.component';
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+import { cookieConfig } from './core/config/cookieConsent';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { CustomPinchZoomComponent } from './core/components/shared/detail-carous
     BrowserAnimationsModule,
     AppRoutingModule,
     SlickCarouselModule,
-    PinchZoomModule
+    PinchZoomModule,
+    NgcCookieConsentModule.forRoot(cookieConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
