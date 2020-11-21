@@ -26,6 +26,9 @@ import { DetailCarouselComponent } from './core/components/shared/detail-carouse
 import { CustomPinchZoomComponent } from './core/components/shared/detail-carousel/custom-pinch-zoom/custom-pinch-zoom.component';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { cookieConfig } from './core/config/cookieConsent';
+import { ProductReminderComponent } from './core/components/bottle/product-reminder/product-reminder.component';
+import { ButtonBuyComponent } from './core/components/bottle/product-reminder/button-buy/button-buy.component';
+import { ButtonBottleComponent } from './core/components/header/button-bottle/button-bottle.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { cookieConfig } from './core/config/cookieConsent';
     ProductDetailsComponent,
     ProductFeaturesComponent,
     DetailCarouselComponent,
-    CustomPinchZoomComponent
+    CustomPinchZoomComponent,
+    ProductReminderComponent,
+    ButtonBuyComponent,
+    ButtonBottleComponent
   ],
   imports: [
     BrowserModule,

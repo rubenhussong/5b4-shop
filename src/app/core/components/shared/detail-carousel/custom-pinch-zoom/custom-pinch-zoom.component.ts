@@ -19,14 +19,14 @@ export class CustomPinchZoomComponent implements OnInit {
 
   pinchZoomConfig = {
     "transition-duration": 300,
-    "disableZoomControl": "disable", // no zoom button
-    "limit-pan": true, // together with minScale this prevents the image to get smaller than original
-    "minScale": 1,
+    "disableZoomControl": "disable", // disables zoom button
+    "limit-pan": true, // prevents from beeing panned over the edge
+    "minScale": 1, // prevents image from getting smaller than default size
     "double-tap": false, // no zoom on double tap
     "draggableImage": false,
     "wheelZoomFactor": .5,
-    "limit-zoom": 5
-    //"backgroundColor": "rgb(220, 176, 136)"
+    "limit-zoom": 5,
+    "backgroundColor": "#fff"
   }
 
   @ViewChild('thisPinch', { static: false }) pinch;

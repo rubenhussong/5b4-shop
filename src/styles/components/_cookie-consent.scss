@@ -1,4 +1,6 @@
 $cc-box-shadow: 0 0 0 2px $color-light;
+$cc-box-shadow-hover: 0 0 0 2px $color-accent;
+$cc-box-shadow-active: 0 0 0 2px $color-dark;
 
 .cc-revoke {
     right: 1em !important;
@@ -8,6 +10,15 @@ $cc-box-shadow: 0 0 0 2px $color-light;
 
     &:hover {
         text-decoration: none !important;
+        background-color: $color-light !important;
+        color: $color-accent !important;
+        box-shadow: $cc-box-shadow-hover;
+    }
+    &:active {
+        background-color: $color-accent !important;
+        color: $color-dark !important;
+        border-color: $color-dark !important;
+        box-shadow: $cc-box-shadow-active;
     }
 
     &.cc-animate {
@@ -56,6 +67,12 @@ $cc-box-shadow: 0 0 0 2px $color-light;
                 &:hover {
                     background-color: $color-light;
                     color: $color-accent;
+                    border-color: $color-light;
+                }
+                &:active {
+                    background-color: $color-accent;
+                    color: $color-dark;
+                    border-color: $color-dark;
                 }
             }
             &.cc-allow {
@@ -63,8 +80,13 @@ $cc-box-shadow: 0 0 0 2px $color-light;
                 &:hover {
                     background-color: $color-accent;
                     color: $color-light;
+                    border-color: $color-light;
                 }
-
+                &:active {
+                    background-color: $color-accent;
+                    color: $color-dark;
+                    border-color: $color-dark;
+                }
             }
         }
     }

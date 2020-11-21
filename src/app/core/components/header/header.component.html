@@ -1,11 +1,12 @@
-<header [class]="classVisibility.all">
-    <a id="header-wordmark" 
+<header>
+    <a id="header-wordmark" [class]="classVisibility.wordmark"
     [routerLink]="['']" routerLinkActive="active" 
     (click)="navigateHome()">
         <img alt="5b4 Wordmark" src="./assets/logos/5b4-wordmark-black.svg">
     </a>
+
     <a id="header-bottle" [class]="classVisibility.bottle"
     [routerLink]="['/flasche']" routerLinkActive="active">
-        <img alt="Bottle Icon" src="./assets/icons/icon-flasche.svg">
+        <app-button-bottle></app-button-bottle>
     </a>
 </header>

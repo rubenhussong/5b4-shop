@@ -1,12 +1,13 @@
 @import '../../../../../styles/global-variables';
 
 .product-title {
-    @include typo-serif(normal, normal);
-    font-size: $fontsize-xl;
+    width: 100%;
+    margin-bottom: 1.2rem;
 
     h2 {
         @include typo-serif(lighter, normal);
         font-size: $fontsize-xl;
+        margin-bottom: .6rem;
     }
 
     &--bp-small { visibility: hidden; }
@@ -19,24 +20,19 @@
         }
         &--bp-large { visibility: hidden; }
     }
+
+    button {
+        margin-right: .25rem;
+    }
 }
 
 .product-head {
 
-    .product-title {
-        margin-bottom: .25rem;
-        width: 100%;
-    }
-
     .product-info-wrapper {
-        max-width: 35rem;
+        max-width: 36rem;
         display: flex;
         flex-direction: column;
         font-size: $fontsize-m;
-
-        .product-title {
-            width: 100%;
-        }
 
         .product-buy {
             margin-bottom: 1rem;

@@ -2,50 +2,43 @@ header {
     z-index: 100;
     position: fixed;
     width: 100%;
-    
-    // Header fade transition
-    transition: opacity .3s ease,
-    transform .3s ease,
-    pointer-events 0s .3s;
 
-    opacity: 0;
-    transform: translateY(-1rem);
     pointer-events: none;
     
-    &.visible {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: all;
-    }
     a {
         position: absolute;
 
-        &:after {
-            visibility: hidden;
-        }
-
         img, svg {
-            width: 100%;
-            height: auto;
+            height: 100%;
+            width: auto;
         }
 
         &#header-wordmark {
             left: 0;
-            width: 4rem;
+            height: 2.6rem;
             margin: 1.25rem;
+
+            // ↖⤵↥↤
         }
 
         &#header-bottle {
             right: 0;
-            width: 4rem;
-            margin: .75rem;
+            height: 3.2rem;
+            margin: 1rem 1.5rem;
         }
+
+        // Header visiblity animation
+        transform: translateY(0);
+        pointer-events: all;
+        opacity: 1;
+        
+        //transition: opacity .3s ease, transform .3s ease, pointer-events 0s .3s;
 
         transition: .4s ease-out;
 
         &.hidden {
             opacity: 0;
-            transform: translateY(-4rem);
+            transform: translateY(-3.5rem);
             pointer-events: none;
         }
     }

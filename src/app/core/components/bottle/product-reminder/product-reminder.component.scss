@@ -1,0 +1,26 @@
+$button-buy-size: 6rem;
+
+.product-reminder-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .product-reminder-text {
+        width: 75%;
+        max-width: calc(100% - $button-buy-size);
+        padding-right: 2rem;
+    }
+
+    .product-reminder-button {
+        width: 25%;
+        min-width: $button-buy-size;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .product-cart-wrapper {
+            width: $button-buy-size;
+        }
+    }
+}

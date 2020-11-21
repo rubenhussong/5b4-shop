@@ -10,7 +10,7 @@ import { RouteScrollStateDirective } from '../../directives/route-scroll-state.d
 })
 export class HeaderComponent implements OnInit {
   classVisibility = {
-    "all": "hidden",
+    "wordmark": "hidden",
     "bottle": "visible"
   }
 
@@ -25,19 +25,22 @@ export class HeaderComponent implements OnInit {
     // Update visibility of menu bar and bottle on route change
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event) => {
-        this.classVisibility.bottle = (event["url"]  === "/") ? "visible" : "hidden"
-        this.updateVisibility()
-      });
+      .subscribe((event) => this.updateVisibility());
   }
 
-  // Update visibility of menu bar
+  // Update visibility of wordmark and bottle
   private updateVisibility(): void {
-    let state = RouteScrollStateDirective.updatedState({
+    let wordmarkState = RouteScrollStateDirective.updatedState({
       actual: { url: this.router.url, scrollY: window.scrollY },
       rules: [{ url: "/", minThreshold: 0, maxThreshold: window.innerHeight * .9 }],
     })
-    this.classVisibility.all = state ? "hidden" : "visible"
+    this.classVisibility.wordmark = wordmarkState ? "hidden" : "visible"
+    
+    let bottleState = RouteScrollStateDirective.updatedState({
+      actual: { url: this.router.url, scrollY: window.scrollY },
+      rules: [{ url: "/", minThreshold: window.innerHeight * .9 }],
+    })
+    this.classVisibility.bottle = bottleState ? "visible" : "hidden"
   }
 
   // Scroll to top when root page is active, else navigate to to root page

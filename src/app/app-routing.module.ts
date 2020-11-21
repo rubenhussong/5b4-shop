@@ -10,9 +10,6 @@ const ROUTES: Routes = [
   { path: 'impressum', component: ImprintComponent, data: {animation: 'Imprint'} }
 ];
 
-const ROUTES_CONFIG = {
-  scrollPositionRestoration: "enabled"
-}
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES, {
