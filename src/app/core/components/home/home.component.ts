@@ -1,14 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { AfterViewInit, Component, HostBinding, OnDestroy } from '@angular/core';
+import { homeAnimations } from '../../config/animations';
 import { ViewportObserverDirective } from '../../directives/viewport-observer.directive';
+import { ScrollPositionRestorerService } from '../../services/scroll-position-restorer.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: []
+  styles: [':host { display: block }'],
+  animations: [ homeAnimations ]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnDestroy, AfterViewInit {
+  @HostBinding('@pageAnimation') get initAnimation() { return }
+
+  private url: string = "/"
+  constructor(
+    private scrollPositionRestorer: ScrollPositionRestorerService,
+    private viewportScroller: ViewportScroller
+  ) { }
   
+  ngOnDestroy(): void {
+    ViewportObserverDirective.unobserve()
+    this.scrollPositionRestorer.set(this.url, this.viewportScroller.getScrollPosition())
+  }
+  ngAfterViewInit(): void {
+    console.log(this.scrollPositionRestorer)
+    this.scrollPositionRestorer.restore(this.url, this.viewportScroller)
+    ViewportObserverDirective.observe()
+  }
+
   carouselSlides = [
     {
       src: "./assets/img/5b4-bottle-snowy.jpg",
@@ -45,11 +66,4 @@ export class HomeComponent implements OnInit {
     "Kunststoff, der in der Natur landet, hat eine Haltbarkeit von mehreren hundert Jahren – aber wer weiß das schon genau. Langzeitstudien wird es wohl erst für unsere Ur-Ur-Ur-Enkel geben.",
     "Jährlich verenden tausende Tiere an den direkten oder indirekten Folgen von Plastikverschmutzung – von den zahlreichen Pflanzen ganz zu schweigen!"
   ]
-
-  constructor() { }
-
-  ngOnInit(): void {
-    ViewportObserverDirective.observe();
-  }
-
 }

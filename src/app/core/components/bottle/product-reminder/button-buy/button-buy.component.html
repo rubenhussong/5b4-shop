@@ -1,6 +1,10 @@
-<a href="https://www.real.de/product/360839467/" class="button-buy-wrapper show-on-scroll">
+<a href="https://www.real.de/product/360839467/" class="button-buy-wrapper show-on-scroll" (mouseenter)="ticking(true)"
+    (mouseleave)="ticking(false)">
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" id=svg-flasche>
+        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" id=svg-flasche
+        aria-labelledby="bottleCartIconTitleID bottleCartIconDescID" role="img">
+        <title id="bottleCartIconTitleID">Nice Bottle to buy</title>
+        <desc id="bottleCartIconDescID"></desc>
         <style type="text/css">
             .st0 {
                 fill: #666666;
@@ -31,7 +35,7 @@
                 <path class="st1" d="M130.5,21.2l-84.9,84.9l42.4,42.4l84.9-84.9L130.5,21.2z" />
                 <polygon points="180,28.3 187.1,21.2 172.9,7.1 165.9,14.1 151.7,0 137.6,14.1 144.6,21.2 137.6,28.3 165.9,56.6 172.9,49.5 
 			180,56.6 194.1,42.4 		" />
-                <g>
+                <g class="svg-bottle-logo" [style.transform]="'rotateZ(' + logo.angle + 'deg)'">
                     <g>
                         <rect x="87.2" y="102.9" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -47.0818 94.224)"
                             class="st5" width="6" height="2" />
@@ -94,7 +98,10 @@
 
 
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" id="svg-cart">
+        viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve" id="svg-cart"
+        aria-labelledby="bottleCartIconTitleID bottleCartIconDescID" role="img">
+        <title id="bottleCartIconTitleID">Buy the Bottle</title>
+        <desc id="bottleCartIconDescID">(comes without the cart)</desc>
         <style type="text/css">
             .st0 {
                 fill: #666666;
@@ -123,10 +130,10 @@
         <g id="Ebene_2">
             <path class="st3" d="M60,60V40H40V20H20v40h20v90h140v-50V60H60z M60,130V80h20v50H60z M100,130V80h20v50H100z M160,130h-20V80h20
 		V130z" />
-            <rect x="45.5" y="155.5" class="st3 svg-cart-wheel svg-cart-wheel--left" width="30"
-                height="30"/>
-            <rect x="144.5" y="155.5" class="st3 svg-cart-whell svg-cart-wheel--right" width="30"
-                height="30"/>
+            <rect x="45.5" y="155.5" class="st3 svg-cart-wheel svg-cart-wheel--left" width="30" height="30"
+                [style.transform]="'rotateZ(' + wheel.angle + 'deg)'" />
+            <rect x="144.5" y="155.5" class="st3 svg-cart-whell svg-cart-wheel--right" width="30" height="30"
+                [style.transform]="'rotateZ(' + wheel.angle + 'deg)'" />
         </g>
     </svg>
 </a>

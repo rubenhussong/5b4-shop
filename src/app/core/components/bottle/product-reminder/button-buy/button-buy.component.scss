@@ -11,39 +11,38 @@
         z-index: -1;
         pointer-events: none;
     }
-
-    
-    &:hover {
         
+    #svg-cart {
+        .svg-cart-wheel {
+            &--left { transform-origin: 30.25% 85.25%; }
+            &--right { transform-origin: 79.75% 85.25%; }
+            /*
+            &--left,
+            &--right {
+                transition: .2s cubic-bezier(.1,0,.8,1);
+                transform: rotate(-22.5deg);
+            }
+            */
+        }
+    }
+    
+    /*
+    &:hover {
         #svg-cart {
             .svg-cart-wheel {
-
-                &--left {
-                    transform: rotate(-5422.5deg);
-                    transition: 7.5s ease-in-out;
-                }
+                &--left,
                 &--right {
-                    transform: rotate(-5422.5deg);
-                    transition: 7.5s ease-in-out;
+                    transform: rotate(-382.5deg);
+                    transition: .4s cubic-bezier(.1,0,.8,1);
                 }
             }
         }
     }
-        
-    #svg-cart {
-        .svg-cart-wheel {
+    */
 
-            &--left {
-                transform-origin: 30.25% 85.25%;
-                transition: 3s ease-in-out;
-                transform: rotate(-22.5deg);
-            }
-            &--right {
-                transform-origin: 79.75% 85.25%;
-                transition: 3s ease-in-out;
-                transform: rotate(-22.5deg);
-            }
-        }
+    .svg-bottle-logo {
+        transform-origin: 50.1109% 45.0962%;
+        transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
     }
 }
 
@@ -52,7 +51,7 @@
     #svg-flasche {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
-        transition: transform .5s ease-out 0s, opacity 0s;
+        transition: transform .5s ease-out .25s, opacity 0s;
     }
 
     &.under-viewport,

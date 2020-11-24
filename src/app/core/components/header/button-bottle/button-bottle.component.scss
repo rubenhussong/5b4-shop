@@ -1,6 +1,7 @@
 svg {
     height: 100%;
     width: auto;
+    transition: .3s ease-out;
 
     .svg-bottle-water {
         transform-origin: center bottom;
@@ -8,9 +9,14 @@ svg {
         transition: .3s ease-out;
     }
     &:hover {
+        transform: rotate(22.5deg);
         .svg-bottle-water {
             opacity: 1;
-            transform: scaleY(.8);
+            transform: scaleY(1);
         }
+    }
+    .svg-bottle-logo {
+        transform-origin: 50% 68.75%;
+        transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
     }
 }

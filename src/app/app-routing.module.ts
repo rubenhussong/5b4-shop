@@ -13,7 +13,7 @@ const ROUTES: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(ROUTES, {
-    scrollPositionRestoration: 'enabled'
+    scrollPositionRestoration: 'disabled'
   })],
   exports: [RouterModule]
 })

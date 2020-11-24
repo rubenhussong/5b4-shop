@@ -1,54 +1,80 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 60 160.5" style="enable-background:new 0 0 60 160.5;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#4D4D4D;}
-	.st1{fill:#666;}
-	.st2{fill:#333333;}
-	.st3{fill:#DCB088;}
-	.st4{fill:#FFFFFF;}
-	.st5{fill:#F2F2F2;}
-</style>
-<g id="Ebene_1">
-	<path class="st0" d="M0,40l0,120h60l0-120L0,40z"/>
-	<path class="st1 svg-bottle-water" d="M0,40l0,120h60l0-120H0z"/>
-	<polygon points="40,10 40,0 20,0 20,10 0,10 0,30 10,30 10,40 50,40 50,30 60,30 60,10 	"/>
-	<g>
-		<g>
-			<rect x="29" y="124" class="st5" width="2" height="6"/>
-		</g>
-		<g>
-			<rect x="29" y="90" class="st5" width="2" height="6"/>
-		</g>
-		<g>
-			<rect x="44" y="109" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="10" y="109" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="12.3" y="117.5" transform="matrix(0.866 -0.5 0.5 0.866 -57.2032 23.5148)" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="41.7" y="100.5" transform="matrix(0.866 -0.5 0.5 0.866 -44.7584 35.9597)" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="37.5" y="121.7" transform="matrix(0.866 -0.5 0.5 0.866 -57.2032 35.9597)" class="st5" width="2" height="6"/>
-		</g>
-		<g>
-			<rect x="20.5" y="92.3" transform="matrix(0.866 -0.5 0.5 0.866 -44.7584 23.5148)" class="st5" width="2" height="6"/>
-		</g>
-		<g>
-			<rect x="18.5" y="123.7" transform="matrix(0.5 -0.866 0.866 0.5 -97.2628 80.9808)" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="35.5" y="94.3" transform="matrix(0.5 -0.866 0.866 0.5 -63.2628 80.9808)" class="st5" width="6" height="2"/>
-		</g>
-		<g>
-			<rect x="43.7" y="115.5" transform="matrix(0.5 -0.866 0.866 0.5 -80.2628 97.9808)" class="st5" width="2" height="6"/>
-		</g>
-		<g>
-			<rect x="14.3" y="98.5" transform="matrix(0.5 -0.866 0.866 0.5 -80.2628 63.9808)" class="st5" width="2" height="6"/>
+	viewBox="0 0 60 160" style="enable-background:new 0 0 60 160.5;" xml:space="preserve"
+	aria-labelledby="bottleIconTitleID bottleIconDescID" role="img" (mouseenter)="ticking(true)"
+	(mouseleave)="ticking(false)">
+	<title id="bottleIconTitleID">More bottled Info</title>
+	<desc id="bottleIconDescID"></desc>
+	<style type="text/css">
+		.st0 {
+			fill: #4D4D4D;
+		}
+
+		.st1 {
+			fill: #666;
+		}
+
+		.st2 {
+			fill: #333333;
+		}
+
+		.st3 {
+			fill: #DCB088;
+		}
+
+		.st5 {
+			fill: #F2F2F2;
+		}
+	</style>
+	<g id="Ebene_1">
+		<path class="st0" d="M0,40l0,120h60l0-120L0,40z" />
+		<!--<path class="st1 svg-bottle-water" d="M0,40l0,120h60l0-120H0z"/>-->
+		<polygon class="st1 svg-bottle-water" points="0,79.853 0,160 60,160 60,55" />
+		<polygon points="40,10 40,0 20,0 20,10 0,10 0,30 10,30 10,40 50,40 50,30 60,30 60,10" />
+		<g class="svg-bottle-logo" [style.transform]="'rotateZ(' + angle + 'deg)'">
+			<g>
+				<rect x="29" y="124" class="st5" width="2" height="6" />
+			</g>
+			<g>
+				<rect x="29" y="90" class="st5" width="2" height="6" />
+			</g>
+			<g>
+				<rect x="44" y="109" class="st5" width="6" height="2" />
+			</g>
+			<g>
+				<rect x="10" y="109" class="st5" width="6" height="2" />
+			</g>
+			<g>
+				<rect x="12.3" y="117.5" transform="matrix(0.866 -0.5 0.5 0.866 -57.2032 23.5148)" class="st5" width="6"
+					height="2" />
+			</g>
+			<g>
+				<rect x="41.7" y="100.5" transform="matrix(0.866 -0.5 0.5 0.866 -44.7584 35.9597)" class="st5" width="6"
+					height="2" />
+			</g>
+			<g>
+				<rect x="37.5" y="121.7" transform="matrix(0.866 -0.5 0.5 0.866 -57.2032 35.9597)" class="st5" width="2"
+					height="6" />
+			</g>
+			<g>
+				<rect x="20.5" y="92.3" transform="matrix(0.866 -0.5 0.5 0.866 -44.7584 23.5148)" class="st5" width="2"
+					height="6" />
+			</g>
+			<g>
+				<rect x="18.5" y="123.7" transform="matrix(0.5 -0.866 0.866 0.5 -97.2628 80.9808)" class="st5" width="6"
+					height="2" />
+			</g>
+			<g>
+				<rect x="35.5" y="94.3" transform="matrix(0.5 -0.866 0.866 0.5 -63.2628 80.9808)" class="st5" width="6"
+					height="2" />
+			</g>
+			<g>
+				<rect x="43.7" y="115.5" transform="matrix(0.5 -0.866 0.866 0.5 -80.2628 97.9808)" class="st5" width="2"
+					height="6" />
+			</g>
+			<g>
+				<rect x="14.3" y="98.5" transform="matrix(0.5 -0.866 0.866 0.5 -80.2628 63.9808)" class="st5" width="2"
+					height="6" />
+			</g>
 		</g>
 	</g>
-</g>
 </svg>

@@ -48,10 +48,15 @@
             }
         }
         
-        &:hover p,
-        &:active p {
+        &:hover p {
             color: $color-light;
             background: $color-accent;
+            border-color: $color-light;
+        }
+        &:active p {
+            color: $color-dark;
+            background: $color-accent;
+            border-color: $color-dark;
         }
 
         &.slider-arrow-prev {

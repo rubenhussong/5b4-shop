@@ -2,8 +2,8 @@
 
 <app-header></app-header>
 
-<div [@routeAnimations]="prepareRoute(outlet)">
-    <router-outlet #outlet="outlet"></router-outlet>
+<div><!-- [@routeAnimations]="prepareRoute(outlet)" -->
+    <router-outlet><!-- #outlet="outlet" --></router-outlet>
 </div>
 
 <app-scroll-arrow></app-scroll-arrow>
