@@ -38,11 +38,13 @@ export class ViewportObserverDirective {
   // Observes all elements with class "show-on-scroll" in embedding module.
   // Adds 'under-viewport' and 'over-viewport' classes to those elements.
   // These can be used to add different styles in scss depending on the state.
-  static observe(): void {
-    let targets = document.querySelectorAll(".show-on-scroll");
-    targets.forEach(function (target) {
-      ViewportObserverDirective.observer.observe(target);
-    });
+  static observe(delay: number): void {
+    setTimeout(function() {
+      let targets = document.querySelectorAll(".show-on-scroll");
+      targets.forEach(function (target) {
+        ViewportObserverDirective.observer.observe(target);
+      });
+    }, delay | 0)
   }
 
   static unobserve(): void {

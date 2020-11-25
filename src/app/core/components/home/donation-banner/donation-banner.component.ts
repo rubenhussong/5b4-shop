@@ -1,17 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewportObserverDirective } from 'src/app/core/directives/viewport-observer.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-donation-banner',
   templateUrl: './donation-banner.component.html',
   styleUrls: ['./donation-banner.component.scss']
 })
-export class DonationBannerComponent implements OnInit {
+export class DonationBannerComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-    ViewportObserverDirective.observe();
-  }
 
 }

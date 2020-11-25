@@ -1,12 +1,11 @@
-import { AfterContentInit, AfterViewInit, Component } from '@angular/core';
-import { ViewportObserverDirective } from 'src/app/core/directives/viewport-observer.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-product-head',
   templateUrl: './product-head.component.html',
   styleUrls: ['./product-head.component.scss']
 })
-export class ProductHeadComponent implements AfterViewInit {
+export class ProductHeadComponent {
 
   detailCarouselSlides = [
     {
@@ -32,9 +31,5 @@ export class ProductHeadComponent implements AfterViewInit {
   ]
 
   constructor() { }
-  
-  ngAfterViewInit(): void {
-    ViewportObserverDirective.observe();
-  }
 
 }

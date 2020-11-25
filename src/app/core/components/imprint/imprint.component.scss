@@ -1,5 +1,10 @@
 @import '../../../../styles/global-variables';
 
+:host {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
 .imprint {
     width: calc(4*(100%/6));
     margin: 0 auto;

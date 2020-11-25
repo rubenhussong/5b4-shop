@@ -11,7 +11,7 @@ import { RouteScrollStateDirective } from '../../directives/route-scroll-state.d
 export class HeaderComponent implements OnInit {
   classVisibility = {
     "wordmark": "hidden",
-    "bottle": "visible"
+    "bottle": "hidden"
   }
 
   constructor(private router: Router) { }

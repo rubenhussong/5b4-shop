@@ -1,7 +1,6 @@
 @import '../../../../../styles/global-variables';
 
 .product-title {
-    width: 100%;
     margin-bottom: 1.2rem;
 
     h2 {
@@ -21,8 +20,39 @@
         &--bp-large { visibility: hidden; }
     }
 
-    button {
+    .box-button {
         margin-right: .25rem;
+
+        @include typo-sans;
+        background: $color-light;
+        color: $color-accent;
+    
+        padding: 10px 10px;
+        border: 2px solid $color-accent;
+        border-radius: 6px;
+        transition: .2s ease;
+    
+        a {
+            color: $color-accent;
+        }
+    
+        &:hover {
+            background-color: $color-accent;
+            color: $color-light;
+            border-color: $color-accent;
+            a {
+                color: $color-light;
+            }
+        }
+    
+        &:active {
+            background-color: $color-accent;
+            color: $color-dark;
+            border-color: $color-dark;
+            a {
+                color: $color-dark;
+            }
+        }
     }
 }
 

@@ -11,7 +11,7 @@ export class ProductReminderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    ViewportObserverDirective.observe()
+    //ViewportObserverDirective.observe()
   }
 
 }

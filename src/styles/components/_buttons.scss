@@ -7,26 +7,37 @@ button {
     &:focus {
         outline: none;
     }
-    &.button-boxed {
-        @include typo-sans;
-        background: $color-light;
+}
+
+.button-boxed {
+    @include typo-sans;
+    background: $color-light;
+    color: $color-accent;
+
+    padding: 10px 10px;
+    border: 2px solid $color-accent;
+    border-radius: 6px;
+    transition: .2s ease;
+
+    a {
         color: $color-accent;
+    }
 
-        padding: 4px 10px;
-        border: 2px solid $color-accent;
-        border-radius: 6px;
-        transition: .2s ease;
-
-        &:hover {
-            background-color: $color-accent;
+    &:hover {
+        background-color: $color-accent;
+        color: $color-light;
+        border-color: $color-accent;
+        a {
             color: $color-light;
-            border-color: $color-accent;
         }
+    }
 
-        &:active {
-            background-color: $color-accent;
+    &:active {
+        background-color: $color-accent;
+        color: $color-dark;
+        border-color: $color-dark;
+        a {
             color: $color-dark;
-            border-color: $color-dark;
         }
     }
 }

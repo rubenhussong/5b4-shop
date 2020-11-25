@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
@@ -6,7 +6,7 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
   templateUrl: './detail-carousel.component.html',
   styleUrls: ['./detail-carousel.component.scss']
 })
-export class DetailCarouselComponent implements OnInit {
+export class DetailCarouselComponent {
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class DetailCarouselComponent implements OnInit {
 
   next() { this.slickModal.slickNext(); }
   prev() { this.slickModal.slickPrev(); }
-  
+
   carouselConfig = {
     "slidesToShow": 1,
     "slidesToScroll": 1,
@@ -29,6 +29,4 @@ export class DetailCarouselComponent implements OnInit {
     "touchMove": false,
     "limitPan": true
   };
-  
-  ngOnInit(): void { }
 }

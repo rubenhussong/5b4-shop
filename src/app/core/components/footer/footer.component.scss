@@ -46,7 +46,7 @@ footer {
     @include max-width('small') {
         div {
             float: none;
-            width: 100%;
+            width: 100% !important;
             margin-top: 1.68rem;
         }
     }

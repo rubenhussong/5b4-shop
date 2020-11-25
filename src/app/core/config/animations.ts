@@ -1,6 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
-export const ANIMATION_DURATION = 300; // Animation duration in 
+export const ANIMATION_DURATION_OUT = 0; // Animation duration in 
+export const ANIMATION_DURATION_IN = 400; // Animation duration in 
 
 export const homeAnimations =
   trigger('pageAnimation', [
@@ -12,7 +13,8 @@ export const homeAnimations =
       transform: 'translateY(0)',
       opacity: 1
     })),
-    transition('void <=> *', animate(ANIMATION_DURATION + 'ms ease-out'))
+    transition('void => *', animate(ANIMATION_DURATION_IN + 'ms ' + (ANIMATION_DURATION_IN / 2) + 'ms ease-in-out')),
+    transition('* => void', animate(ANIMATION_DURATION_OUT + 'ms cubic-bezier(.3, 2, .3, .5)'))
   ])
 
 export const bottleAnimations =
@@ -25,7 +27,8 @@ export const bottleAnimations =
       transform: 'translateX(0)',
       opacity: 1
     })),
-    transition('* <=> void', animate(ANIMATION_DURATION + 'ms ease-out'))
+    transition('void => *', animate(ANIMATION_DURATION_IN + 'ms ' + (ANIMATION_DURATION_IN / 2) + 'ms ease-in-out')),
+    transition('* => void', animate(ANIMATION_DURATION_OUT + 'ms cubic-bezier(.3, 2, .3, .5)'))
   ])
 
 export const imprintAnimations =
@@ -35,8 +38,25 @@ export const imprintAnimations =
       opacity: 0
     })),
     state('*', style({
-      transform: 'translateX(0)',
+      transform: 'translateY(0)',
       opacity: 1
     })),
-    transition('* <=> void', animate(ANIMATION_DURATION + 'ms ease-out'))
+    transition('void => *', animate(ANIMATION_DURATION_IN + 'ms ' + (ANIMATION_DURATION_IN / 2) + 'ms ease-in-out')),
+    transition('* => void', animate(ANIMATION_DURATION_OUT + 'ms cubic-bezier(.3, 2, .3, .5)'))
   ])
+
+/* ========== Readme
+
+Put in implementing component:
+
+  @Component({
+    ...
+    styles: [':host { display: block }'],
+    animations: [ imprintAnimations ],
+    ...
+  })
+  export class YouRComponent {
+    @HostBinding('@pageAnimation') get initAnimation() { return }
+    ...
+
+*/

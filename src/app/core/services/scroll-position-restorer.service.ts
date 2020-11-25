@@ -1,6 +1,5 @@
 import { ViewportScroller } from '@angular/common';
 import { Injectable } from '@angular/core';
-import { ANIMATION_DURATION } from '../config/animations';
 
 @Injectable({
   providedIn: 'root'
@@ -12,57 +11,55 @@ export class ScrollPositionRestorerService {
   }
 
   // sets or assignes
-  set(url: string, scrollPosition: [number, number]): void {
+  store(url: string, scrollPosition: [number, number]): void {
     this.map[url] = scrollPosition
   }
 
-  // gets (assigns [0, 0] before if not available)
-  get(url: string): [number, number] {
-    if (!this.has(url)) this.set(url, [0, 0])
+  // Restores the ViewportScroller to the given Scroll Position
+  // The timeout sets a delay to give the leaving page time to animate.
+  restore(url: string, viewportScroller: ViewportScroller, delay: number): void {
+    setTimeout(function() {
+      viewportScroller.scrollToPosition(this.get(url))
+    }.bind(this), delay | 0)
+  }
+
+  // gets (stores [0, 0] before if no last position available)
+  private get(url: string): [number, number] {
+    if (!this.contains(url)) this.store(url, [0, 0])
     return this.map[url]
   }
 
   // checks if assigned
-  has(url: string): boolean {
+  private contains(url: string): boolean {
     return this.map[url] !== undefined
-  }
-
-  // Restores the ViewportScroller to the given Scroll Position
-  // The timeout sets a delay to give the leaving page time to aimate.
-  restore(url: string, viewportScroller: ViewportScroller): void {
-    setTimeout(function() {
-      viewportScroller.scrollToPosition(this.get(url))
-    }.bind(this), ANIMATION_DURATION | 0)
   }
 }
 
-/* D O C
+/* ========== Readme
 
 To use this Service for restoring the last Scroll Position:
 
+
 1 Set the animation duration for your page animations. For me its set in animations.ts
+
 
 2 implement these Angular inbuilt services in all pages:
     
-    implements OnInit, OnDestroy, AfterViewInit
+    implements OnDestroy, AfterViewInit
 
+    
 3 Call the following methods:
   (Important: Raplace the url attribute for every page by a unique ID.)
 
-  private url: string = "UNIQUE_URL"
-  constructor(
-    private scrollPositionRestorer: ScrollPositionRestorerService,
-    private viewportScroller: ViewportScroller
-  ) { }
-  ngOnInit(): void {
-    this.scrollPositionRestorer.restore(this.url, this.viewportScroller)
+  private scrollPosition: [number, number]
+  @HostListener('window:scroll', ['$event']) onScroll(event) {
+    this.scrollPosition = this.viewportScroller.getScrollPosition()
   }
   ngOnDestroy(): void {
-    ViewportObserverDirective.unobserve()
-    this.scrollPositionRestorer.set(this.url, this.viewportScroller.getScrollPosition())
+    this.scrollPositionRestorer.store(this.url, this.scrollPosition)
   }
   ngAfterViewInit(): void {
-    ViewportObserverDirective.observe()
+    this.scrollPositionRestorer.restore(this.url, this.viewportScroller)
   }
 
 */

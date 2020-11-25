@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewportObserverDirective } from 'src/app/core/directives/viewport-observer.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-product-features',
   templateUrl: './product-features.component.html',
   styleUrls: ['./product-features.component.scss']
 })
-export class ProductFeaturesComponent implements OnInit {
+export class ProductFeaturesComponent {
 
   bulletListItems = [
     "Die Neopren-Tasche hält warme Getränke länger warm und kalte kalt. Zusätzlich schützt sie Deine Flasche vor Flaschen.",
@@ -17,7 +16,5 @@ export class ProductFeaturesComponent implements OnInit {
   ]
 
   constructor() { }
-
-  ngOnInit(): void { }
 
 }

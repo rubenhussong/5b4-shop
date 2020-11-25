@@ -1,24 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ViewportObserverDirective } from 'src/app/core/directives/viewport-observer.directive';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-button-buy',
   templateUrl: './button-buy.component.html',
   styleUrls: ['./button-buy.component.scss']
 })
-export class ButtonBuyComponent implements OnInit {
-  logo = {
+export class ButtonBuyComponent {
+  logo: any = {
     angle: 0
   }
-  wheel = {
+  wheel: any = {
     angle: -22.5
   }
 
   constructor() { }
-
-  ngOnInit(): void {
-    ViewportObserverDirective.observe();
-  }
 
   ticking(running: boolean) {
     if (running) {

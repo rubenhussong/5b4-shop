@@ -1,6 +1,6 @@
 import { ViewportScroller } from '@angular/common';
-import { AfterViewInit, Component, HostBinding, OnDestroy } from '@angular/core';
-import { homeAnimations } from '../../config/animations';
+import { AfterViewInit, Component, HostBinding, HostListener, OnDestroy } from '@angular/core';
+import { ANIMATION_DURATION_OUT, homeAnimations } from '../../config/animations';
 import { ViewportObserverDirective } from '../../directives/viewport-observer.directive';
 import { ScrollPositionRestorerService } from '../../services/scroll-position-restorer.service';
 
@@ -19,16 +19,27 @@ export class HomeComponent implements OnDestroy, AfterViewInit {
     private scrollPositionRestorer: ScrollPositionRestorerService,
     private viewportScroller: ViewportScroller
   ) { }
-  
+
+  /* ScrollPositionRestorer (& ViewportObserver) */
+  private scrollPosition: [number, number]
+  @HostListener('window:scroll', ['$event']) onScroll(event) {
+    this.scrollPosition = this.viewportScroller.getScrollPosition()
+  }
   ngOnDestroy(): void {
     ViewportObserverDirective.unobserve()
-    this.scrollPositionRestorer.set(this.url, this.viewportScroller.getScrollPosition())
+    this.scrollPositionRestorer.store(this.url, this.scrollPosition)
   }
   ngAfterViewInit(): void {
-    console.log(this.scrollPositionRestorer)
-    this.scrollPositionRestorer.restore(this.url, this.viewportScroller)
-    ViewportObserverDirective.observe()
+    this.scrollPositionRestorer.restore(this.url, this.viewportScroller, ANIMATION_DURATION_OUT | 0)
+    ViewportObserverDirective.observe(ANIMATION_DURATION_OUT | 0)
   }
+  /* End ScrollPositionRestorer */
+  
+  items = [
+    { title: 'Slide 1' },
+    { title: 'Slide 2' },
+    { title: 'Slide 3' },
+  ]
 
   carouselSlides = [
     {
