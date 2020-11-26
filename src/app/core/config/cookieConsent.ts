@@ -2,11 +2,11 @@ import { NgcCookieConsentConfig, NgcCookieConsentService, NgcCookieTheme, } from
 
 export const cookieConfig: NgcCookieConsentConfig = {
     cookie: {
-        domain: '.5b4.shop' // change to .5b4.shop
+        domain: 'www.5b4.shop'
     },
     type: 'opt-out',
     position: 'bottom-right',
-    theme: "classic", // block, classic, edgeless, (cc-theme-5b4)
+    theme: "classic",
     palette: {
         popup: {
             background: 'rgb(220, 175, 135)',

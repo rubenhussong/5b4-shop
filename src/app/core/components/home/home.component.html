@@ -55,16 +55,27 @@
 
 <app-donation-banner></app-donation-banner>
 
-<div class="section section-info">
-    <p class="show-on-scroll">
-        Durstig? Dann bestell Dir für 24,99€
-        <a href="https://www.real.de/product/360839467/">Deine 5b4-Trinkflasche</a>.
+<div class="section section-info product-reminder-wrapper">
+    <p class="product-reminder-column product-reminder-text show-on-scroll">
+        Durstig? Dann bestell Dir für 24,99€ Deine 5b4-Trinkflasche.
         Bist Du an einer Zusammenarbeit interessiert, dann freuen wir uns über <a href="mailto:erde@5b4.shop"
             subject="Ich bin flüssig und gewähre Euch drei Wünsche!">Deine Flaschenpost</a>.
         Bald ist auch unser eigener Onlineshop verfügbar.
         Schau doch in der Zwischenzeit auf unserem <a href="https://instagram.com/fivebefore">Instagram-Kanal</a>
         vorbei!
     </p>
+    <div class="product-reminder-column product-reminder-buttons">
+        <div class="button-wrapper show-on-scroll">
+            <div class="box-button">
+                <a [routerLink]="['/flasche']" routerLinkActive="active">Flasche?</a>
+            </div>
+        </div>
+        <div class="button-wrapper show-on-scroll">
+            <div class="box-button">
+                <a href="https://www.real.de/product/360839467/">Kauf ich!</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>

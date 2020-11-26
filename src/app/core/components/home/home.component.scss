@@ -1,4 +1,50 @@
+@import '../../../../styles/global-variables';
+
 :host {
     max-width: 100% !important;
     overflow-x: hidden !important;
+}
+
+$button-buy-size: 9rem;
+
+.product-reminder-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+
+    .product-reminder-text {
+        padding-right: 2rem;
+    }
+
+    .product-reminder-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .button-wrapper {
+            width: $button-buy-size;
+            text-align: center;
+            padding: 1rem;
+        }
+    }
+
+    @include max-width('small') {
+        flex-direction: column;
+        
+        .product-reminder-text {
+            padding-right: 0;
+            padding-bottom: 4rem;
+        }
+
+        .product-reminder-buttons {
+            flex-direction: row;
+            width: 100%;
+
+            .button-wrapper {
+                max-width: 50%;
+            }
+        }
+    }
 }
