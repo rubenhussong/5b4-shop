@@ -2,7 +2,7 @@ import { NgcCookieConsentConfig, NgcCookieConsentService, NgcCookieTheme, } from
 
 export const cookieConfig: NgcCookieConsentConfig = {
     cookie: {
-        domain: 'localhost' // change to 5b4.shop
+        domain: '.5b4.shop' // change to .5b4.shop
     },
     type: 'opt-out',
     position: 'bottom-right',
