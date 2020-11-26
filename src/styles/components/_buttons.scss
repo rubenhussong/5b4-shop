@@ -11,25 +11,27 @@ button {
 
 .box-button {
     @include typo-sans;
-    background: $color-light;
-    color: $color-accent;
 
-    padding: .6rem;
+    padding: .2rem .5rem;
     border: 2px solid $color-accent;
     border-radius: 6px;
     transition: .2s ease;
+    display: inline-block;
     cursor: pointer;
 
+    background-color: $color-accent;
+    color: $color-light;
+    border-color: $color-accent;
     a {
-        color: $color-accent;
+        color: $color-light;
     }
 
     &:hover {
-        background-color: $color-accent;
-        color: $color-light;
+        background: $color-light;
+        color: $color-accent;
         border-color: $color-accent;
         a {
-            color: $color-light;
+            color: $color-accent;
         }
     }
 
