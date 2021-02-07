@@ -24,8 +24,8 @@ import { ProductDetailsComponent } from './core/components/bottle/product-detail
 import { ProductFeaturesComponent } from './core/components/bottle/product-features/product-features.component';
 import { DetailCarouselComponent } from './core/components/shared/detail-carousel/detail-carousel.component';
 import { CustomPinchZoomComponent } from './core/components/shared/detail-carousel/custom-pinch-zoom/custom-pinch-zoom.component';
-import { NgcCookieConsentModule } from 'ngx-cookieconsent';
-import { cookieConfig } from './core/config/cookieConsent';
+//import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+//import { cookieConfig } from './core/config/cookieConsent';
 import { ProductReminderComponent } from './core/components/bottle/product-reminder/product-reminder.component';
 import { ButtonBuyComponent } from './core/components/bottle/product-reminder/button-buy/button-buy.component';
 import { ButtonBottleComponent } from './core/components/header/button-bottle/button-bottle.component';
@@ -60,8 +60,8 @@ import { ButtonBottleComponent } from './core/components/header/button-bottle/bu
     BrowserAnimationsModule,
     AppRoutingModule,
     SlickCarouselModule,
-    PinchZoomModule,
-    NgcCookieConsentModule.forRoot(cookieConfig)
+    PinchZoomModule
+    //NgcCookieConsentModule.forRoot(cookieConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

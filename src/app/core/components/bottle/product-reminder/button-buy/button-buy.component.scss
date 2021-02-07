@@ -1,8 +1,8 @@
+@import '../../../../../../styles/global-variables';
+
 .button-buy-wrapper {
     width: 100%;
     height: 100%;
-
-    
     
     #svg-flasche {
         position: absolute;
@@ -43,6 +43,14 @@
     .svg-bottle-logo {
         transform-origin: 50.1109% 45.0962%;
         transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
+    }
+
+    .caption {
+        @include typo-sans();
+        font-size: $fontsize-s;
+        color: $color-accent;
+        text-align: center;
+        transform: translateX(.3em);
     }
 }
 

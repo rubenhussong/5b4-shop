@@ -1,6 +1,7 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, HostBinding, HostListener, OnDestroy } from '@angular/core';
 import { ANIMATION_DURATION_OUT, homeAnimations } from '../../config/animations';
+import { BOTTLE_DETAILS } from '../../config/config';
 import { ViewportObserverDirective } from '../../directives/viewport-observer.directive';
 import { ScrollPositionRestorerService } from '../../services/scroll-position-restorer.service';
 
@@ -14,6 +15,8 @@ import { ScrollPositionRestorerService } from '../../services/scroll-position-re
 export class HomeComponent implements OnDestroy, AfterViewInit {
   @HostBinding('@pageAnimation') get initAnimation() { return }
 
+  bottleDetails = BOTTLE_DETAILS
+  
   private url: string = "/"
   constructor(
     private scrollPositionRestorer: ScrollPositionRestorerService,

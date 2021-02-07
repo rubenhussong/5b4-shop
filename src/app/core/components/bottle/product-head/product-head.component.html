@@ -2,37 +2,41 @@
     <h2>5b4-Trinkflasche</h2>
 
     <div class="box-button">
-        <a href="https://www.real.de/product/360839467/">Kaufen</a>
+        <a href={{bottleDetails.shopUrl}}>Kaufen im Shop</a>
     </div>
-    für 24,99€
+    für {{bottleDetails.price}}
 </div>
 
 <div class="section section-two-columns product-head">
 
-    <div class="column show-on-scroll scroll-image">
-        <app-detail-carousel [slides]="detailCarouselSlides"></app-detail-carousel>
-    </div>
+    <div class="row">
 
-    <div class="column product-info-wrapper">
-
-        <div class="product-title product-title--bp-large show-on-scroll">
-            <h2>5b4-Trinkflasche</h2>
-
-            <div type="button" class="box-button" href="https://www.real.de/product/360839467/">
-                <a href="https://www.real.de/product/360839467/">Kaufen</a>
-            </div>
-            für 24,99€
+        <div class="column show-on-scroll scroll-image">
+            <app-detail-carousel [slides]="detailCarouselSlides"></app-detail-carousel>
         </div>
 
-        <p class="product-info show-on-scroll">
-            Um es Dir zu ermöglichen, Flaschen aus Einweg-Plastik zu vermeiden, haben wir diese schicke Trinkflasche
-            entwickelt.
-            So vermeidest Du Müll und sparst CO2.
-            Das gute Teil besticht durch schlichte Eleganz und hochwertige Verarbeitung. Im nächsten Meeting schluckst
-            Du mit Genuss.
-            Das Material ist leicht wie eine Feder und so stabil wie Dein Lieblings-Pumper im Fitness.
-            Der Flaschenkörper besteht aus 100% Tritan™ von Eastman und ist somit BPA-frei.
-        </p>
+        <div class="column product-info-wrapper">
+
+            <div class="product-title product-title--bp-large show-on-scroll">
+                <h2>5b4-Trinkflasche</h2>
+
+                <div type="button" class="box-button">
+                    <a href={{bottleDetails.shopUrl}}>Kaufen im Shop</a>
+                </div>
+                für {{bottleDetails.price}}
+            </div>
+
+            <p class="product-info show-on-scroll">
+                Um es Dir zu ermöglichen, Flaschen aus Einweg-Plastik zu vermeiden, haben wir diese schicke Trinkflasche
+                entwickelt.
+                So vermeidest Du Müll und sparst CO2.
+                Das gute Teil besticht durch schlichte Eleganz und hochwertige Verarbeitung. Im nächsten Meeting schluckst
+                Du mit Genuss.
+                Das Material ist leicht wie eine Feder und so stabil wie Dein Lieblings-Pumper im Fitness.
+                Der Flaschenkörper besteht aus 100% Tritan™ von Eastman und ist somit BPA-frei.
+            </p>
+        </div>
+
     </div>
 
 </div>

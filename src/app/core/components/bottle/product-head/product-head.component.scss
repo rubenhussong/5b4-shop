@@ -28,7 +28,8 @@
 .product-head {
 
     .product-info-wrapper {
-        max-width: 36rem;
+        width: 36rem;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
         font-size: $fontsize-m;
@@ -41,5 +42,9 @@
         .product-info {
             margin-bottom: 1rem;
         }
+    }
+
+    @include max-width('small') {
+        padding-top: 0;
     }
 }

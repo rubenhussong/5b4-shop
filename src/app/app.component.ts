@@ -7,12 +7,13 @@ import { Subscription } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent /*implements OnInit, OnDestroy*/ {
   title = '5b4 Shop';
   private statusChangeSubscription: Subscription;
   
-  constructor(private ccService: NgcCookieConsentService) { }
+  constructor(/*private ccService: NgcCookieConsentService*/) { }
 
+  /*
   ngOnInit(): void {
     this.statusChangeSubscription = this.ccService.statusChange$.subscribe(
       (event: NgcStatusChangeEvent) => {
@@ -22,8 +23,7 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.statusChangeSubscription.unsubscribe()
   }
-
-
+  */
 
   /*
   prepareRoute(outlet: RouterOutlet) {

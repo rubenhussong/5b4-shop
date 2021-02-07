@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BOTTLE_DETAILS } from 'src/app/core/config/config';
 
 @Component({
   selector: 'app-product-head',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-head.component.scss']
 })
 export class ProductHeadComponent {
+  bottleDetails = BOTTLE_DETAILS
 
   detailCarouselSlides = [
     {

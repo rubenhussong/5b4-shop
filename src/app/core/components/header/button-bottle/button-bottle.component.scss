@@ -1,22 +1,50 @@
-svg {
-    height: 100%;
-    width: auto;
-    transition: .3s ease-out;
+@import '../../../../../styles/global-variables';
 
-    .svg-bottle-water {
-        transform-origin: center bottom;
-        transform: scaleY(0);
+.button-bottle {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    .caption {
+        margin-right: .8em;
+        width: 5.5em;
+        color: $color-medium-grey;
+
+        @include typo-sans();
+        font-size: $fontsize-xs;
+        text-align: center;
+
         transition: .3s ease-out;
     }
-    &:hover {
-        transform: rotate(22.5deg);
+
+    svg {
+        height: 100%;
+        width: auto;
+        transition: .3s ease-out;
+
         .svg-bottle-water {
-            opacity: 1;
-            transform: scaleY(1);
+            transform-origin: center bottom;
+            transform: scaleY(0);
+            transition: .3s ease-out;
+        }
+        .svg-bottle-logo {
+            transform-origin: 50% 68.75%;
+            transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
         }
     }
-    .svg-bottle-logo {
-        transform-origin: 50% 68.75%;
-        transition: transform 0.5s cubic-bezier(.3, 2, .3, .5);
+    
+    &:hover {
+        .caption {
+            color: $color-light-grey;
+        }
+
+        svg {
+            transform: rotate(22.5deg);
+            .svg-bottle-water {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
     }
 }

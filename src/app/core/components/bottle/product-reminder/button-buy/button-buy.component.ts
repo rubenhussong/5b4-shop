@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BOTTLE_DETAILS } from 'src/app/core/config/config';
 
 @Component({
   selector: 'app-button-buy',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./button-buy.component.scss']
 })
 export class ButtonBuyComponent {
+  bottleDetails = BOTTLE_DETAILS
+  
   logo: any = {
     angle: 0
   }

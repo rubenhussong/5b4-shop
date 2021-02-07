@@ -1,0 +1,54 @@
+@import '../../../../../styles/global-variables';
+
+.section-product-features {
+
+    .row {
+        padding-left: 4rem;
+        padding-right: 4rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        &.product-feature {
+            .column {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+    
+                &>* {
+                    width: 36rem;
+                    max-width: 100%;
+                }
+            }
+    
+            .product-feature-info-wrapper {
+                .product-feature-info {
+                    .product-feature-title {
+                        @include typo-serif(lighter, normal);
+                        font-size: $fontsize-l;
+                        margin-bottom: .6rem;
+                    }
+                    .product-feature-text {
+                        @include typo-serif(normal, normal);
+                        font-size: $fontsize-m;
+
+                        .text-note {
+                            font-size: $fontsize-s;
+                        }
+                    }
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            flex-direction: row-reverse;
+        }
+
+        @include max-width('small') {
+            padding: 2.5rem 1.5rem;
+            &:nth-child(2n) {
+                flex-direction: column;
+            }
+        }
+    }
+}
